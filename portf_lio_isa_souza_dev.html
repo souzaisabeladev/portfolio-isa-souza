@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isa Souza dev | Dev & Web Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#dc2626',
+                            redDark: '#991b1b',
+                            darkBg: '#0f0f11',
+                            darkCard: '#18181c',
+                            darkBorder: '#27272a',
+                            lightBg: '#f8fafc',
+                            lightCard: '#ffffff',
+                            lightBorder: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .text-gradient-red {
+            background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-darkBg text-slate-100 dark:bg-brand-darkBg dark:text-slate-100 light:bg-brand-lightBg light:text-slate-800 antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-brand-darkBg/90 dark:bg-brand-darkBg/90 light:bg-white/90 border-b border-brand-darkBorder dark:border-brand-darkBorder light:border-brand-lightBorder transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo Branding iS -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-700 shadow-md group-hover:border-brand-red transition-all">
+                    <span class="text-2xl font-black tracking-tighter flex items-baseline">
+                        <span class="text-white relative">
+                            i
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-red rounded-full"></span>
+                        </span>
+                        <span class="text-gradient-red ml-0.5">S</span>
+                    </span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg leading-tight tracking-tight text-white dark:text-white light:text-slate-900">Isa Souza <span class="text-brand-red">dev</span></span>
+                    <span class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500 font-medium">Dev & Web Solutions</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#inicio" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red transition-colors">Início</a>
+                <a href="#sobre" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red transition-colors">Sobre</a>
+                <a href="#servicos" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red transition-colors">Serviços</a>
+                <a href="#projetos" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red transition-colors">Projetos</a>
+                <a href="#depoimentos" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red transition-colors">Diferenciais</a>
+                <a href="#contato" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red transition-colors">Contato</a>
+            </nav>
+
+            <!-- Actions: Light/Dark Toggle + CTA -->
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" type="button" aria-label="Alternar tema" class="p-2.5 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-slate-100 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:border-brand-red transition-all">
+                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
+                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg text-amber-400"></i>
+                </button>
+
+                <a href="#contato" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-brand-red hover:bg-red-700 transition-all shadow-lg hover:shadow-red-900/30">
+                    <span>Solicitar Orçamento</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-slate-100 text-slate-300 dark:text-slate-300 light:text-slate-700">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 bg-brand-darkBg dark:bg-brand-darkBg light:bg-white px-4 py-4 space-y-3">
+            <a href="#inicio" class="block text-sm font-medium py-2 text-slate-200 dark:text-slate-200 light:text-slate-800 hover:text-brand-red">Início</a>
+            <a href="#sobre" class="block text-sm font-medium py-2 text-slate-200 dark:text-slate-200 light:text-slate-800 hover:text-brand-red">Sobre</a>
+            <a href="#servicos" class="block text-sm font-medium py-2 text-slate-200 dark:text-slate-200 light:text-slate-800 hover:text-brand-red">Serviços</a>
+            <a href="#projetos" class="block text-sm font-medium py-2 text-slate-200 dark:text-slate-200 light:text-slate-800 hover:text-brand-red">Projetos</a>
+            <a href="#depoimentos" class="block text-sm font-medium py-2 text-slate-200 dark:text-slate-200 light:text-slate-800 hover:text-brand-red">Diferenciais</a>
+            <a href="#contato" class="block text-sm font-medium py-2 text-slate-200 dark:text-slate-200 light:text-slate-800 hover:text-brand-red">Contato</a>
+            <a href="#contato" class="block text-center w-full py-3 rounded-xl font-semibold text-sm text-white bg-brand-red">Solicitar Orçamento</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="pt-36 pb-20 md:pt-48 md:pb-32 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto space-y-8">
+                
+                <!-- Badge Status -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Disponível para novos projetos e freelancing</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white dark:text-white light:text-slate-900 tracking-tight leading-tight">
+                    Isa Souza <span class="text-slate-400 font-light">|</span> <span class="text-gradient-red">Dev & Web Solutions</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-xl text-slate-400 dark:text-slate-400 light:text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Desenvolvimento Web de alta performance, plataformas escaláveis e presença digital estratégica para alavancar negócios corporativos.
+                </p>
+
+                <!-- Delivery Time Badge -->
+                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 shadow-lg text-xs sm:text-sm font-semibold text-slate-200 dark:text-slate-200 light:text-slate-800">
+                    <div class="w-8 h-8 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-sm">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <span>Prazo de entrega: <strong class="text-brand-red font-bold">a partir de 1 semana</strong> (a combinar)</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                    <a href="#projetos" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-brand-red hover:bg-red-700 transition-all shadow-xl hover:shadow-red-900/40 flex items-center justify-center gap-3">
+                        <span>Ver Projetos</span>
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                    <a href="https://wa.me/5511948619558" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-200 dark:text-slate-200 light:text-slate-800 bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 hover:border-brand-red transition-all flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
+                        <span>Falar no WhatsApp</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A MARCA -->
+    <section id="sobre" class="py-20 border-t border-b border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 bg-brand-darkCard/40 dark:bg-brand-darkCard/40 light:bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-brand-red font-semibold text-xs tracking-widest uppercase"><i class="fa-solid fa-user-check"></i> Autoridade Técnica</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white dark:text-white light:text-slate-900">Soluções digitais com foco em performance e resultados reais</h2>
+                    <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed">
+                        A marca <strong>Isa Souza dev</strong> nasceu para transformar necessidades técnicas em sistemas modernos, intuitivos e altamente funcionais. Crio desde Landing Pages otimizadas para vendas até plataformas corporativas completas, garantindo infraestrutura segura e comunicação eficiente.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200">
+                            <span class="block text-2xl font-extrabold text-white dark:text-white light:text-slate-900">100%</span>
+                            <span class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500">Design Responsivo & Adaptável</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200">
+                            <span class="block text-2xl font-extrabold text-brand-red">Seguro</span>
+                            <span class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500">E-mail Profissional & DNS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Card Mockup -->
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md p-6 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 shadow-2xl relative overflow-hidden">
+                        <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-700 flex items-center justify-center font-black text-2xl">
+                                <span class="text-white">i<span class="text-brand-red">S</span></span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white dark:text-white light:text-slate-900">Isa Souza dev</h3>
+                                <p class="text-xs text-slate-400">Desenvolvimento Web Corporativo</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-red"></i>
+                                <span>Landing Pages de Alta Conversão</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-red"></i>
+                                <span>Sistemas Web & Dashboards</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-red"></i>
+                                <span>Redes Sociais & Canais de Contato</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-red"></i>
+                                <span>Configuração de E-mail Corporativo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-red font-semibold text-xs tracking-widest uppercase"><i class="fa-solid fa-layer-group"></i> O Que Fazemos</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white dark:text-white light:text-slate-900">Serviços & Especialidades</h2>
+                <p class="text-slate-400 dark:text-slate-400 light:text-slate-600">Oferecemos pacotes completos para estruturar e potencializar a presença digital do seu negócio.</p>
+                
+                <!-- Destaque Agilidade / Prazo nos Serviços -->
+                <div class="pt-4 flex items-center justify-center">
+                    <div class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-red/30 text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 shadow-md">
+                        <div class="w-9 h-9 rounded-xl bg-brand-red text-white flex items-center justify-center text-base shadow-md">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-xs text-slate-400 font-medium">Agilidade e Compromisso</span>
+                            <span class="text-xs sm:text-sm font-bold text-white dark:text-white light:text-slate-900">Entrega rápida a partir de 1 semana <span class="text-brand-red">(a combinar)</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Serviços -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 hover:border-brand-red transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Desenvolvimento Web</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                            Criação de sites institucionais, e-commerce e landing pages modernas com design responsivo, alta velocidade e foco total em conversão.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-brand-red font-semibold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        <span>Solicitar Orçamento</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 hover:border-brand-red transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Redes Sociais & Contato</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                            Gestão e integração dos seus canais oficiais (Instagram, WhatsApp, LinkedIn) para aproximar clientes e profissionalizar sua marca.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-brand-red font-semibold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        <span>Solicitar Orçamento</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 hover:border-brand-red transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Configuração de E-mail</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                            Configuração de e-mails corporativos (@suaempresa.com.br) no Google Workspace, Microsoft 365, com DNS e servidores totalmente seguros.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-brand-red font-semibold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                        <span>Solicitar Orçamento</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS DESTAQUE -->
+    <section id="projetos" class="py-24 border-t border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 bg-brand-darkCard/20 dark:bg-brand-darkCard/20 light:bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-brand-red font-semibold text-xs tracking-widest uppercase"><i class="fa-solid fa-briefcase"></i> Portfólio</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-white dark:text-white light:text-slate-900 mt-2">Projetos em Destaque</h2>
+                </div>
+                <!-- Filtros -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-brand-red text-white" data-filter="all">Todos</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-darkCard dark:bg-brand-darkCard light:bg-white text-slate-300 dark:text-slate-300 light:text-slate-700 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 hover:border-brand-red" data-filter="web">Sistemas & Web</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-darkCard dark:bg-brand-darkCard light:bg-white text-slate-300 dark:text-slate-300 light:text-slate-700 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 hover:border-brand-red" data-filter="ecommerce">E-commerce</button>
+                </div>
+            </div>
+
+            <!-- Grid de 4 Projetos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Projeto 1: Restaurando Vidas -->
+                <div class="project-card group rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 overflow-hidden shadow-xl" data-category="web">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-neutral-900 to-red-950">
+                        <i class="fa-solid fa-heart-pulse text-6xl text-brand-red/40 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-brand-red text-white shadow">Web Institucional</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Restaurando Vidas</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm">
+                            Plataforma web institucional dedicada ao apoio social, com agendamentos online, gerenciamento de conteúdo e área para doações integradas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Web App</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Responsivo</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Gestão de Conteúdo</span>
+                        </div>
+                        <button onclick="openModal('Restaurando Vidas', 'Plataforma institucional focada em utilidade pública, contendo sistema de cadastro, área informativa e agendamentos diretos.', 'Web App, Landing Page, Formulários', 'https://wa.me/5511948619558')" class="w-full mt-4 py-2.5 rounded-xl border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 font-semibold text-xs text-slate-200 dark:text-slate-200 light:text-slate-800 hover:border-brand-red hover:text-brand-red transition-all">
+                            Ver Detalhes do Projeto
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Gestão Empresarial -->
+                <div class="project-card group rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 overflow-hidden shadow-xl" data-category="web">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-neutral-900 to-stone-900">
+                        <i class="fa-solid fa-chart-line text-6xl text-brand-red/40 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-neutral-800 text-slate-200 border border-neutral-700">Sistema Web</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Gestão Empresarial</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm">
+                            Dashboard corporativo para controle de métricas, gestão de tarefas e relatórios em tempo real com interface limpa e intuitiva.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Dashboard</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Relatórios</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Painel ADM</span>
+                        </div>
+                        <button onclick="openModal('Gestão Empresarial', 'Sistema de alta escala projetado para gerenciar operações empresariais, com relatórios gráficos e controle total de permissões.', 'Dashboard Web, Painel Administrativo', 'https://wa.me/5511948619558')" class="w-full mt-4 py-2.5 rounded-xl border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 font-semibold text-xs text-slate-200 dark:text-slate-200 light:text-slate-800 hover:border-brand-red hover:text-brand-red transition-all">
+                            Ver Detalhes do Projeto
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Urban Trend (Loja de Roupas) -->
+                <div class="project-card group rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 overflow-hidden shadow-xl" data-category="ecommerce">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-neutral-900 to-red-900">
+                        <i class="fa-solid fa-shirt text-6xl text-brand-red/40 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-brand-red text-white shadow">E-commerce Moda</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Urban Trend | Clothing</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm">
+                            Loja virtual moderna para marca de vestuário urbano com vitrine dinâmica, carrinho interativo e checkout otimizado para mobile.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">E-commerce</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Catálogo</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Checkout</span>
+                        </div>
+                        <button onclick="openModal('Urban Trend - Loja de Roupas', 'Plataforma e-commerce completa voltada para o setor da moda, garantindo experiência de compra fluida em smartphones e navegadores.', 'E-commerce, Catálogo Interativo, Pagamentos Integrados', 'https://wa.me/5511948619558')" class="w-full mt-4 py-2.5 rounded-xl border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 font-semibold text-xs text-slate-200 dark:text-slate-200 light:text-slate-800 hover:border-brand-red hover:text-brand-red transition-all">
+                            Ver Detalhes do Projeto
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Panetteria Artisanal (Padaria & Cardápio) -->
+                <div class="project-card group rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 overflow-hidden shadow-xl" data-category="ecommerce">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-neutral-900 to-amber-950">
+                        <i class="fa-solid fa-bread-slice text-6xl text-amber-500/40 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-600 text-white shadow">Cardápio Digital</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Panetteria Artisanal</h3>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm">
+                            Site responsivo e cardápio digital para padaria artesanal, com integração direta para pedidos pelo WhatsApp.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Cardápio Digital</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">WhatsApp Order</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs bg-neutral-800 text-slate-300">Gastronomia</span>
+                        </div>
+                        <button onclick="openModal('Panetteria Artisanal', 'Solução perfeita para estabelecimentos gastronômicos com cardápio interativo, filtros por categoria de produtos e envio imediato de pedidos via WhatsApp.', 'Cardápio Digital, Landing Page Gourmet, WhatsApp API', 'https://wa.me/5511948619558')" class="w-full mt-4 py-2.5 rounded-xl border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 font-semibold text-xs text-slate-200 dark:text-slate-200 light:text-slate-800 hover:border-brand-red hover:text-brand-red transition-all">
+                            Ver Detalhes do Projeto
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS E DIFERENCIAIS -->
+    <section id="depoimentos" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-red font-semibold text-xs tracking-widest uppercase"><i class="fa-solid fa-star"></i> Satisfação Garantida</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-white dark:text-white light:text-slate-900 mt-2">Por que contratar a Isa Souza dev?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 shadow-md">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 dark:text-slate-300 light:text-slate-700 text-sm leading-relaxed mb-6">
+                        "A Isa estruturou todo o nosso site e e-mail corporativo. O profissionalismo no atendimento e a agilidade na entrega superaram nossas expectativas."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white font-bold text-sm">
+                            A
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm text-white dark:text-white light:text-slate-900">Ana</span>
+                            <span class="text-xs text-slate-400">Cliente Corporativo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 shadow-md">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 dark:text-slate-300 light:text-slate-700 text-sm leading-relaxed mb-6">
+                        "Site extremamente rápido e perfeito em telas de celular. O suporte para configuração dos nossos e-mails corporativos foi essencial."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-neutral-700 flex items-center justify-center text-white font-bold text-sm">
+                            M
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm text-white dark:text-white light:text-slate-900">Marcos Oliveira</span>
+                            <span class="text-xs text-slate-400">Empreendedor Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 shadow-md">
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 dark:text-slate-300 light:text-slate-700 text-sm leading-relaxed mb-6">
+                        "Identidade visual limpa e elegante aplicada no sistema web do nosso negócio. Recomendamos fortemente a Isa Souza dev!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-red/80 flex items-center justify-center text-white font-bold text-sm">
+                            C
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm text-white dark:text-white light:text-slate-900">Carla Mendes</span>
+                            <span class="text-xs text-slate-400">Gestora de Projetos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO & CONTATO -->
+    <section id="contato" class="py-24 border-t border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 bg-brand-darkCard/40 dark:bg-brand-darkCard/40 light:bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-brand-red font-semibold text-xs tracking-widest uppercase"><i class="fa-solid fa-paper-plane"></i> Fale Conosco</span>
+                        <h2 class="text-3xl sm:text-5xl font-bold text-white dark:text-white light:text-slate-900 mt-2">Vamos iniciar seu projeto?</h2>
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 mt-4 leading-relaxed">
+                            Entre em contato agora para discutir sua demanda, solicitar um orçamento sem compromisso ou agendar uma consultoria técnica.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contacts -->
+                    <div class="space-y-4">
+                        <a href="https://wa.me/5511948619558" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 hover:border-emerald-500 transition-all shadow-md group">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">WhatsApp Direto</span>
+                                <span class="text-sm font-bold text-white dark:text-white light:text-slate-900">(11) 94861-9558</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:isasouzadev@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 hover:border-brand-red transition-all shadow-md group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl group-hover:bg-brand-red group-hover:text-white transition-all">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">E-mail Profissional</span>
+                                <span class="text-sm font-bold text-white dark:text-white light:text-slate-900">isasouzadev@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/isabela-souza19" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 hover:border-sky-500 transition-all shadow-md group">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center text-xl group-hover:bg-sky-500 group-hover:text-white transition-all">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">LinkedIn Profissional</span>
+                                <span class="text-sm font-bold text-white dark:text-white light:text-slate-900">linkedin.com/in/isabela-souza19</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="pt-4">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-3">Redes Sociais</span>
+                        <div class="flex gap-3">
+                            <a href="https://wa.me/5511948619558" target="_blank" title="WhatsApp" class="w-10 h-10 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 flex items-center justify-center text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-emerald-500 hover:border-emerald-500 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.linkedin.com/in/isabela-souza19" target="_blank" title="LinkedIn" class="w-10 h-10 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 flex items-center justify-center text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-sky-500 hover:border-sky-500 transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="mailto:isasouzadev@gmail.com" title="E-mail" class="w-10 h-10 rounded-xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 flex items-center justify-center text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-brand-red hover:border-brand-red transition-all"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Orçamento -->
+                <div class="p-8 rounded-2xl bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-6">Solicitar Orçamento</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 mb-2">Nome Completo</label>
+                            <input type="text" required placeholder="Seu nome ou da sua empresa" class="w-full px-4 py-3 rounded-xl bg-brand-darkBg dark:bg-brand-darkBg light:bg-slate-50 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 text-slate-200 dark:text-slate-200 light:text-slate-800 text-sm focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 mb-2">E-mail para resposta</label>
+                            <input type="email" required placeholder="seuemail@empresa.com" class="w-full px-4 py-3 rounded-xl bg-brand-darkBg dark:bg-brand-darkBg light:bg-slate-50 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 text-slate-200 dark:text-slate-200 light:text-slate-800 text-sm focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 mb-2">Serviço de Interesse</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-brand-darkBg dark:bg-brand-darkBg light:bg-slate-50 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 text-slate-200 dark:text-slate-200 light:text-slate-800 text-sm focus:outline-none focus:border-brand-red">
+                                <option>Desenvolvimento Web / Landing Page</option>
+                                <option>Sistema Web / Dashboard</option>
+                                <option>E-commerce / Loja Virtual</option>
+                                <option>Redes Sociais & Canais de Contato</option>
+                                <option>Configuração de E-mail Corporativo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 mb-2">Mensagem / Detalhes do Projeto</label>
+                            <textarea rows="4" required placeholder="Descreva brevemente o que você precisa..." class="w-full px-4 py-3 rounded-xl bg-brand-darkBg dark:bg-brand-darkBg light:bg-slate-50 border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 text-slate-200 dark:text-slate-200 light:text-slate-800 text-sm focus:outline-none focus:border-brand-red"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-brand-red hover:bg-red-700 transition-all shadow-lg hover:shadow-red-900/30">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                    
+                    <div id="form-message" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/20 text-emerald-400 text-center text-sm font-semibold border border-emerald-500/30">
+                        Mensagem enviada com sucesso! Retornaremos em breve.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 bg-brand-darkBg dark:bg-brand-darkBg light:bg-white text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-700 flex items-center justify-center font-black text-white text-xs">
+                    i<span class="text-brand-red">S</span>
+                </div>
+                <span>&copy; 2026 Isa Souza dev. Todos os direitos reservados.</span>
+            </div>
+            <div class="flex gap-6 text-xs">
+                <a href="https://wa.me/5511948619558" target="_blank" class="hover:text-emerald-500 transition-colors">WhatsApp</a>
+                <a href="https://www.linkedin.com/in/isabela-souza19" target="_blank" class="hover:text-sky-500 transition-colors">LinkedIn</a>
+                <a href="mailto:isasouzadev@gmail.com" class="hover:text-brand-red transition-colors">isasouzadev@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE PROJETOS -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-brand-darkCard dark:bg-brand-darkCard light:bg-white border border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-300 w-full max-w-lg rounded-2xl p-6 relative shadow-2xl space-y-6">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="space-y-2">
+                <span class="text-xs font-bold text-brand-red uppercase">Detalhes do Projeto</span>
+                <h3 id="modal-title" class="text-2xl font-bold text-white dark:text-white light:text-slate-900"></h3>
+            </div>
+
+            <p id="modal-desc" class="text-slate-300 dark:text-slate-300 light:text-slate-700 text-sm leading-relaxed"></p>
+
+            <div class="space-y-2 border-t border-brand-darkBorder dark:border-brand-darkBorder light:border-slate-200 pt-4">
+                <span class="text-xs font-semibold text-slate-400 block">Recursos & Funcionalidades:</span>
+                <p id="modal-tech" class="text-xs font-mono text-brand-red"></p>
+            </div>
+
+            <div class="pt-2">
+                <a id="modal-link" href="#" target="_blank" class="w-full py-3 rounded-xl font-bold text-white bg-brand-red hover:bg-red-700 transition-all flex items-center justify-center gap-2 text-sm">
+                    <span>Falar sobre um projeto similar</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT / INTERATIVIDADE -->
+    <script>
+        // Tema Light / Dark Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filtro de Projetos
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-red', 'text-white');
+                    b.classList.add('bg-brand-darkCard', 'text-slate-300');
+                });
+                btn.classList.add('bg-brand-red', 'text-white');
+                btn.classList.remove('bg-brand-darkCard', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Functionalities
+        function openModal(title, desc, tech, link) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-tech').innerText = tech;
+            document.getElementById('modal-link').href = link;
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Simulação do Formulário
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const msg = document.getElementById('form-message');
+            msg.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
